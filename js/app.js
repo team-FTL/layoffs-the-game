@@ -56,8 +56,6 @@ function timer() {
 generateListOfProfiles();
 
 
-
-
 // Local Storage functions
 // We're creating local storage functions that saves the results of the game to a leaderboard: the user name, number of correct choices, and number of incorrect choices.  We also initialize the local storage if it has not been done before, and we DON'T initialize a new local storage if it has so we don't wipe the leaderboard.  Game results are contained in a object called session.
 
