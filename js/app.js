@@ -21,12 +21,27 @@ function generateListOfProfiles() {
   })
 }
 
+
 function pickRandomGraph() {
   let randomType = graphs[Math.floor(Math.random() * graphs.length)];
   let randomNumber = Math.floor(Math.random() * 10);
 
   return `${randomType}_${randomNumber}`
 }
+
+//Form - username
+let formName = document.getElementById('form-name');
+function getName(e){
+  event.preventDefault();
+  //user input name stored in a variable = username
+  let username = e.target.username.value;
+  let welcomeUserHTML = document.getElementById('welcome-user');
+  let welcomeUser = document.createElement('p');
+  welcomeUser.innerText = `Welcome, ${username}!`;
+  welcomeUserHTML.appendChild(welcomeUser);
+  timer();
+}
+formName.addEventListener('submit',getName);
 
 // Timer function
 function timer() {
@@ -47,4 +62,31 @@ function timer() {
 
 //Excutables
 generateListOfProfiles();
-timer();
+
+
+// Local Storage functions
+// We're creating local storage functions that saves the results of the game to a leaderboard: the user name, number of correct choices, and number of incorrect choices.  We also initialize the local storage if it has not been done before, and we DON'T initialize a new local storage if it has so we don't wipe the leaderboard.  Game results are contained in a object called session.
+
+const Session () {
+  this.name = name;
+  this.goodCall = goodCall;
+  this.badCall = badCall; 
+}
+  
+
+// saveState can save game session results to localStorage
+function saveState() {
+  let processedSaveState = JSON.stringify(session);
+  localStorage.setItem('session', processedSaveState);
+}
+
+if (!localStorage.getItem('session')) {
+  // if localStorage does NOT find something called session, it creates a fresh empty session.  
+  new Session;
+
+  }
+
+
+
+
+
