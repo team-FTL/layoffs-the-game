@@ -10,15 +10,23 @@ const listOfProfiles = [];
 //Profile Object
 function Profile(name, fileName, fileExt = 'svg') {
   this.name = name;
-  this.graph = `img/${fileName}.${fileExt}`
+  this.graph = `img/graphs/${fileName}.${fileExt}`
 }
 
 // Generate Random Profiles
 function generateListOfProfiles() {
   randomNames.forEach(name => {
-    let randomGraph = graphs[Math.floor(Math.random() * graphs.length)];
+    let randomGraph = pickRandomGraph();
     listOfProfiles.push(new Profile(name, randomGraph))
   })
+}
+
+
+function pickRandomGraph() {
+  let randomType = graphs[Math.floor(Math.random() * graphs.length)];
+  let randomNumber = Math.floor(Math.random() * 10);
+
+  return `${randomType}_${randomNumber}`
 }
 
 //Form - username
