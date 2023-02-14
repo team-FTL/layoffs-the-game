@@ -2,9 +2,20 @@
 
 const ctx = document.getElementById('myChart');
 
+if (!localStorage.getItem('session')) {
+  // if localStorage does NOT find something called session, it creates a fresh empty session.  
+  new Session;
+
+} else {
+  let loadState = localStorage.getItem('session'); 
+  session = JSON.parse(loadState);
+  console.log(session);
+}
+
+
 // TODO: replace gamerName, score with array from localstorage
-let gamerName = ['David','Tony','Alex'];
-let score = [10,16,22];
+let gamerName = ['David', 'Tony', 'Alex'];
+let score = [10, 16, 22];
 
 new Chart(ctx, {
   type: 'bar',
