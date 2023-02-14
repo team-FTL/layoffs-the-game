@@ -1,5 +1,26 @@
 'use strict';
 
+//Global variables
+const randomNames = ["Malcolm Hull", "Zain Faulk", "Elvin Geiger", "Brock Noe", "Ibrahim Mull", "Alanis Dillon", "Ajay Barrios", "Braydon Braden", "Chaz Nesbitt", "Spencer Saylor", "Romeo Fogle", "Mickayla Shearer", "Madilyn Babcock", "Evelyn McNeal", "Bayley Leon", "Amberly Carrillo", "Annabella Vogel", "Kylie Francisco", "Katy Acosta", "Rayna Balderas", "Jackie Scholl", "Nico Templeton", "Perla Hoyt", "Antwan Plummer", "Zainab Baughman", "Kurt Mojica", "Octavia Hammer", "Maura Swope", "Ashton Gilman", "Beth Keefe", "Priscila Read", "Catherine Rubio", "Reilly Cardona", "Neha Mortensen", "Celia Hagen", "Zaria Schumacher", "Elsa McIntire", "Rylan Walden", "Jaren Burks", "Rylan Volk", "Allyson Dempsey", "Paxton Kroll", "Kenton Knight", "Shelbi Slack", "Demond Doucette", "Trever Epperson", "Cesar Donnell", "Landen Grove", "Juana Gabriel", "Zavier Isbell"]
+
+const graphs = ["greenDown", "greenUp", "redDown", "redUp"];
+
+const listOfProfiles = [];
+
+//Profile Object
+function Profile(name, fileName, fileExt = 'svg') {
+  this.name = name;
+  this.graph = `img/${fileName}.${fileExt}`
+}
+
+// Generate Random Profiles
+function generateListOfProfiles() {
+  randomNames.forEach(name => {
+    let randomGraph = graphs[Math.floor(Math.random() * graphs.length)];
+    listOfProfiles.push(new Profile(name, randomGraph))
+  })
+}
+
 
 // Timer function
 function timer() {
@@ -17,4 +38,7 @@ function timer() {
   };
   let startCountDown = setInterval(countDown, 1000);
 }
+
+//Excutables
+generateListOfProfiles();
 timer();
