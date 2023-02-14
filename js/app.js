@@ -21,6 +21,19 @@ function generateListOfProfiles() {
   })
 }
 
+//Form - username
+let formName = document.getElementById('form-name');
+function getName(e){
+  event.preventDefault();
+  //user input name stored in a variable = username
+  let username = e.target.username.value;
+  let welcomeUserHTML = document.getElementById('welcome-user');
+  let welcomeUser = document.createElement('p');
+  welcomeUser.innerText = `Welcome, ${username}!`;
+  welcomeUserHTML.appendChild(welcomeUser);
+  timer();
+}
+formName.addEventListener('submit',getName);
 
 // Timer function
 function timer() {
@@ -41,4 +54,4 @@ function timer() {
 
 //Excutables
 generateListOfProfiles();
-timer();
+
