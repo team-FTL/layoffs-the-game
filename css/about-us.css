@@ -2,6 +2,7 @@
   box-sizing: border-box;
 }
 
+
 nav {
   display: flex;
   justify-content: space-around;
@@ -29,6 +30,35 @@ nav a:hover {
 
 }
 
+#members {
+display: block;
+width: 1200px;
+margin: 30px auto;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+article {
+  font-size: 25px;
+}
+
+img {
+  width: 250px;
+  height: 250px;
+  border-radius: 170px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-width: 3px;
+  border-color: rgb(12, 92, 0);
+  border-style: solid;
+}
+
 footer {
   margin: 100px 50px;
+  text-align: center;
 }
