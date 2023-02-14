@@ -41,7 +41,7 @@ function timer() {
 
 //Excutables
 generateListOfProfiles();
-timer();
+timer()
 
 
 // Local Storage functions
