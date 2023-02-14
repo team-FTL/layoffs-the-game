@@ -1,3 +1,176 @@
 * {
   box-sizing: border-box;
 }
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: darkolivegreen;
+  padding: 20px 50px;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 4px #000000;
+  width: 100%;
+}
+
+nav a {
+  font-size: 30px;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  color: white;
+  transition-duration: 200ms;
+}
+
+nav a:hover {
+  cursor: pointer;
+  /* color: rgb(246, 246, 149); */
+  text-shadow: 0 0 8px rgb(2, 40, 8), 0 0 8px rgb(2, 40, 8), 0 0 8px rgb(2, 40, 8), 0 0 8px rgb(2, 40, 8);
+
+}
+
+#hero-image {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+/* .play-area-pane {
+  display: flex;
+  width: 1200px;
+  height: 700px;
+  margin: auto;
+  border-width: 2px;
+  z-index: 5;
+}
+
+.left-pane-fire {
+  width: 600px;
+  height: 700px;
+  margin: auto;
+  border-width: 2px;
+  background-color: rgb(212, 0, 0,0.1);
+}
+
+.right-pane-retain {
+  width: 600px;
+  height: 700px;
+  margin: auto;
+  border-width: 2px;
+  background-color: rgb(4, 255, 0,0.1);
+} */
+
+#outer-gameplay-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  width: 1000px;
+  height: 700px;
+  margin: 10px auto;
+
+}
+
+#fire {
+  font-size: 25px;
+  background-color: rgb(187, 0, 0);
+  color: white;
+  padding: 10px 46.2056px;
+  border-radius: 10px;
+  transition-duration: 400ms;
+  align-items: center;
+}
+
+#fire:hover {
+  background-color: rgb(255, 0, 0);
+  color: white;
+}
+
+#retain {
+  font-size: 25px;
+  background-color: rgb(0, 160, 11);
+  color: white;
+  padding: 10px 30px;
+  border-radius: 10px;
+  transition-duration: 400ms;
+  align-items: center;
+}
+
+#retain:hover {
+  background-color: rgb(0, 255, 17);
+  color: white;
+}
+
+.gameplay-area {
+  /* display: block; */
+  /* width: 1000px;
+  height: 700px; */
+  /* margin: auto; */
+  border-width: 2px;
+  border-style: solid;
+  border-color: darkblue;
+  background-color: rgb(219, 219, 219);
+}
+
+#timer-box {
+  display: block;
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+#humans-correctly-resourced {
+  display: block;
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.instruction-area {
+  width: 1000px;
+  height: 500px;
+  margin: 50px auto;
+  border-width: 2px;
+  border-style: solid;
+  border-color: darkblue;
+}
+
+#instruction-img {
+  display: flex;
+  flex-direction: row;
+}
+
+#instruction-title {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+#good-fire-example-div {
+  background-color: rgb(255, 0, 0, 0.1);
+}
+
+#good-retain-example-div {
+  background-color: rgb(60, 179, 113, 0.1);
+}
+
+
+.good-fire-example,
+.good-retain-example {
+  /* border-width: 2px;
+  border-style: solid;
+  border-color: darkblue; */
+  margin: 5px 10px;
+  width: 300px;
+}
+
+footer {
+  margin: 100px 50px;
+}
