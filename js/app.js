@@ -12,7 +12,7 @@ const listOfProfiles = [];
 //Profile Object
 function Profile(name, fileName, fileExt = 'svg') {
   this.name = name;
-  this.graph = `img/graphs/${fileName}.${fileExt}`
+  this.graph = `img/graphs/${fileName}.${fileExt}`;
 }
 
 // Generate Random Profiles
