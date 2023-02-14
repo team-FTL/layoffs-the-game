@@ -2,6 +2,8 @@
 
 Team FTL: Kyle Freemantle, Jonathan Tsai, Thomas Lau
 
+## Description
+
 It's 2023, and the layoffs are happening! Leadership has put everyone in Performance Improvement Plan for the past month and asked you to go through the current stack of employees and decide who gets to stay.
 
 This web game will utilize a left-right decision making mechanism simulating a overworked HR manager at a big tech company. The user will be presented with a simulated graph of an employee's progress in their Perfomance Improvement Plan (PIP) and will have to make a binary descision to retain or fire the worker. The employees are either in good standing (represented by green scorecard) or in bad standing (represented by red scorecard). On the scorecard, there is a progress graph indicated if they are improving or worsening in their standing. The user will have to swipe right to keep or swipe left to fire. When the time ends, the user will be presented how many employees they've processed correctly. They will then be able to brag to their friends about their cutthroat business acumen!
@@ -64,3 +66,9 @@ There will be a page to introduce the web developers who worked on this project
 
 - A short bio of each team member is presented
 - A photo of team member is also shown
+
+
+## Domain Modeling and Wireframing
+
+
+![Domain Modeling and Wireframing](img/WireframeAndUML.png)
