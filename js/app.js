@@ -1,7 +1,9 @@
 'use strict';
 
 //Global variables
-const randomNames = ["Malcolm Hull", "Zain Faulk", "Elvin Geiger", "Brock Noe", "Ibrahim Mull", "Alanis Dillon", "Ajay Barrios", "Braydon Braden", "Chaz Nesbitt", "Spencer Saylor", "Romeo Fogle", "Mickayla Shearer", "Madilyn Babcock", "Evelyn McNeal", "Bayley Leon", "Amberly Carrillo", "Annabella Vogel", "Kylie Francisco", "Katy Acosta", "Rayna Balderas", "Jackie Scholl", "Nico Templeton", "Perla Hoyt", "Antwan Plummer", "Zainab Baughman", "Kurt Mojica", "Octavia Hammer", "Maura Swope", "Ashton Gilman", "Beth Keefe", "Priscila Read", "Catherine Rubio", "Reilly Cardona", "Neha Mortensen", "Celia Hagen", "Zaria Schumacher", "Elsa McIntire", "Rylan Walden", "Jaren Burks", "Rylan Volk", "Allyson Dempsey", "Paxton Kroll", "Kenton Knight", "Shelbi Slack", "Demond Doucette", "Trever Epperson", "Cesar Donnell", "Landen Grove", "Juana Gabriel", "Zavier Isbell"]
+const randomNames = ["Malcolm Hull", "Zain Faulk", "Elvin Geiger", "Brock Noe", "Ibrahim Mull", "Alanis Dillon", "Ajay Barrios", "Braydon Braden", "Chaz Nesbitt", "Spencer Saylor", "Romeo Fogle", "Mickayla Shearer", "Madilyn Babcock", "Evelyn McNeal", "Bayley Leon", "Amberly Carrillo", "Annabella Vogel", "Kylie Francisco", "Katy Acosta", "Rayna Balderas", "Jackie Scholl", "Nico Templeton", "Perla Hoyt", "Antwan Plummer", "Zainab Baughman", "Kurt Mojica", "Octavia Hammer", "Maura Swope", "Ashton Gilman", "Beth Keefe", "Priscila Read", "Catherine Rubio", "Reilly Cardona", "Neha Mortensen", "Celia Hagen", "Zaria Schumacher", "Elsa McIntire", "Rylan Walden", "Jaren Burks", "Rylan Volk", "Allyson Dempsey", "Paxton Kroll", "Kenton Knight", "Shelbi Slack", "Demond Doucette", "Trever Epperson", "Cesar Donnell", "Landen Grove", "Juana Gabriel", "Zavier Isbell"];
+
+let session = [];
 
 const graphs = ["greenDown", "greenUp", "redDown", "redUp"];
 
@@ -60,18 +62,18 @@ function timer() {
   let startCountDown = setInterval(countDown, 1000);
 }
 
-//Excutables
+//Executables
 generateListOfProfiles();
 
 
 // Local Storage functions
 // We're creating local storage functions that saves the results of the game to a leaderboard: the user name, number of correct choices, and number of incorrect choices.  We also initialize the local storage if it has not been done before, and we DON'T initialize a new local storage if it has so we don't wipe the leaderboard.  Game results are contained in a object called session.
 
-const Session () {
-  this.name = name;
-  this.goodCall = goodCall;
-  this.badCall = badCall; 
-}
+// function Session (name, goodCall, badCall) {
+//   this.name = name;
+//   this.goodCall = goodCall;
+//   this.badCall = badCall; 
+// }
   
 
 // saveState can save game session results to localStorage
@@ -80,11 +82,30 @@ function saveState() {
   localStorage.setItem('session', processedSaveState);
 }
 
-if (!localStorage.getItem('session')) {
-  // if localStorage does NOT find something called session, it creates a fresh empty session.  
-  new Session;
 
-  }
+// Constructor function for session data
+function Session (name, goodCall) {
+  this.name = name;
+  this.goodCall = goodCall;
+  // this.badCall = badCall; 
+}
+
+if (!localStorage.getItem('session')) {
+  // if localStorage does NOT find something called session, it creates a fresh empty session.
+  let createSession = new Session('testUser', 8);
+  session.push(createSession);
+  console.log(session);
+  saveState();
+} else {
+  let loadState = localStorage.getItem('session'); 
+  session = JSON.parse(loadState);
+  console.log(session);
+}
+// if (!localStorage.getItem('session')) {
+//   // if localStorage does NOT find something called session, it creates a fresh empty session.  
+//   new Session (); // T0D0: pass in w/ actual form data
+
+//   }
 
 
 
