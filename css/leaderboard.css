@@ -1,3 +1,83 @@
 * {
   box-sizing: border-box;
 }
+
+body {
+  background-color: #b9e0b8;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+text-align: center;
+  /* width:80%;
+  margin: auto; */
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: darkolivegreen;
+  padding: 20px 50px;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 4px #000000;
+  width: 100%;
+}
+
+nav a {
+  font-size: 30px;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  color: white;
+  transition-duration: 200ms;
+}
+
+nav a:hover {
+ cursor: pointer;
+ /* color: rgb(246, 246, 149); */
+ text-shadow: 0 0 8px rgb(2, 40, 8), 0 0 8px rgb(2, 40, 8), 0 0 8px rgb(2, 40, 8), 0 0 8px rgb(2, 40, 8);
+
+}
+
+h1 {
+  font-size: 50px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#chart {
+  display: block;
+  width: 85%;
+  height: 600px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: darkblue;
+  margin: 50px auto;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#reseLeaderboard {
+  font-size: 25px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  text-decoration: none;
+  padding: 10px 30px;
+  border-radius: 10px;
+  transition-duration: 400ms;
+  align-items: center;
+
+}
+
+#reseLeaderboard:hover {
+  background-color: rgba(247, 116, 1, 0.79);
+  color: white;
+}
+
+footer {
+  margin: 100px 50px;
+}
