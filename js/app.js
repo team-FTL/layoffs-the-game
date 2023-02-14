@@ -3,7 +3,7 @@
 
 // Timer function
 function timer() {
-  const timerHTML = document.getElementById('timer');
+  const timerHTML = document.getElementById('timer-box');
   let countDownTimer = 60;
   let countDown = function () {
     timerHTML.innerHTML = `${countDownTimer--} sec left`;
