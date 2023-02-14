@@ -2,15 +2,10 @@
 
 const ctx = document.getElementById('myChart');
 
-if (!localStorage.getItem('session')) {
-  // if localStorage does NOT find something called session, it creates a fresh empty session.  
-  new Session;
+// Global variables
+let session = [];
 
-} else {
-  let loadState = localStorage.getItem('session'); 
-  session = JSON.parse(loadState);
-  console.log(session);
-}
+
 
 
 // TODO: replace gamerName, score with array from localstorage
