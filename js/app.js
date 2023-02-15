@@ -29,7 +29,7 @@ function Profile(name, fileName, fileExt = 'svg') {
 
 //Local Storage functions -------------------------------------------------
 function saveState() {
-  let processedSaveState = JSON.stringify(session);
+  let processedSaveState = JSON.stringify(listOfSessions);
   localStorage.setItem('session', processedSaveState);
 }
 
@@ -67,18 +67,18 @@ function pickRandomGraph() {
 function renderProfile() {
   let employeeName = document.getElementById('employeeName');
   let profileImg = document.getElementById('profileRender');
-  let rng = function () {
-    return Math.floor(Math.random() * listOfProfiles.length);
-  };
-  let number = rng();
+  let gameArea = document.getElementById('employee-profile-container');
+
+  let number = Math.floor(Math.random() * listOfProfiles.length)
+
   employeeName.innerText = `${listOfProfiles[number].name}'s performance`;
   profileImg.src = listOfProfiles[number].graph;
+
   listOfProfiles.splice(number, 1);
 }
 
 function clearPlayArea() {
   let playArea = document.getElementById('gameplay-area');
-  console.log(playArea);
   playArea.innerHTML ='';
 }
 
@@ -111,7 +111,7 @@ function startTimer() {
   renderProfile();
 
   const timerHTML = document.getElementById('timer-box');
-  let countDownTimer = 10;
+  let countDownTimer = 60;
 
   //function to display number
   let countDown = function () {
@@ -134,20 +134,32 @@ function startTimer() {
 function retain(e) {
   e.preventDefault();
 
-  let image = document.querySelector('#employee-profile-container img').src;
-  if (image.includes('greenUp') || image.includes('redDown')) {
-    listOfSessions[listOfSessions.length - 1].goodCall++
+  let imageName = document.getElementById('profileRender').src;
+  let gameArea = document.getElementById('employee-profile-container');
+
+  if (imageName.includes('greenUp') || imageName.includes('redDown')) {
+    listOfSessions[listOfSessions.length - 1].goodCall++;
+  } else {
+    renderProfile();
+    gameArea.className = 'notify';
   }
+
   renderProfile();
 }
 
 function fire(e) {
   e.preventDefault();
 
-  let image = document.querySelector('#employee-profile-container img').src;
-  if (image.includes('greenDown') || image.includes('redUp')) {
-    listOfSessions[listOfSessions.length - 1].goodCall++
+  let imageName = document.getElementById('profileRender').src;
+  let gameArea = document.getElementById('employee-profile-container');
+
+  if (imageName.includes('greenDown') || imageName.includes('redUp')) {
+    listOfSessions[listOfSessions.length - 1].goodCall++;
+  } else {
+    renderProfile();
+    gameArea.className = 'notify';
   }
+
   renderProfile();
 }
 
