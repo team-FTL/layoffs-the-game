@@ -20,34 +20,18 @@
   </header>
   <img src="https://place-hold.it/1000x300" id="hero-image" alt="game name and description of the hero image" />
 
-
   <main>
-    <div id="form-name">
-      <form>
-        <label>
-          <input type="text" name="username" placeholder="Enter you name." required>
-        </label>
-        <button type="submit" id="submit">Start</button>
-      </form>
-      <div id="welcome-user"></div>
-    </div>
     <div id="outer-gameplay-area">
       <div id="fire">Fire</div>
       <div id="gameplay-area">
-        <!-- TODO: where players click on the div, it will register the click -->
-        <div class="play-area-pane">
-          <div class="left-pane-fire"></div>
-          <div class="right-pane-retain"></div>
-        </div>
-
-        <div id="timer-box">Time</div>
-        <div id="employee-profile-container">
-          <p id="employeeName"></p>
-          <img id="profileRender" src="img/employee_profile_placeholder.svg"
-            alt="placeholder image for employee profiles measuring 1000x500px" />
-        </div>
-        <div id="humans-correctly-resourced">
-          <p>Employees Processed Correctly: ${count}</p>
+        <div id="form-name">
+          <form>
+            <label>
+              <input type="text" name="username" placeholder="Enter you name." required>
+            </label>
+            <button type="submit" id="submit">Start</button>
+          </form>
+          <div id="welcome-user"></div>
         </div>
       </div>
       <div id="retain">Retain</div>
