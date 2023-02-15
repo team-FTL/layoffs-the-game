@@ -75,7 +75,7 @@ function getName(e) {
 function startTimer() {
   //add eventHandler for game button
   retainButton.addEventListener('click', retain);
-  fireButton.addEventListener('click', retain);
+  fireButton.addEventListener('click', fire);
   renderProfile();
 
   const timerHTML = document.getElementById('timer-box');
@@ -87,7 +87,7 @@ function startTimer() {
     if (countDownTimer < 0) {
       clearInterval(startCountDown);
       retainButton.removeEventListener('click', retain);
-      fireButton.removeEventListener('click', retain);
+      fireButton.removeEventListener('click', fire);
       // TODO: remove eventListeners + render results + option to restart the game
 
       timerHTML.innerHTML = 'Times up';
