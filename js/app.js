@@ -146,7 +146,7 @@ function saveState() {
 function Session(name, goodCall) {
   this.name = name;
   this.goodCall = goodCall;
-  // this.badCall = badCall; 
+  // this.badCall = badCall;
 }
 
 
@@ -156,7 +156,7 @@ function checkLocalStorage() {
   if (!localStorage.getItem('session')) {
     // if localStorage does NOT find something called session, it creates a fresh empty session.
     listOfSessions.push(newSession);
-  } else { 
+  } else {
     let loadState = localStorage.getItem('session');
     listOfSessions = JSON.parse(loadState);
 
@@ -164,38 +164,38 @@ function checkLocalStorage() {
   }
 }
 
-// innerHTML 
+// innerHTML
 
 // When used after the form is complete, playArea clears uses innerHTML to clear out everything under the gameplay-area after the 
 
-function clearPlayArea (
-let playArea = document.getElementsById('gameplay-area');
-document.playArea.innerHTML = '';
-)
+function clearPlayArea (){
+  let playArea = document.getElementsById('gameplay-area');
+  document.playArea.innerHTML = '';
+}
+
 
 // then we use innerHTML to rebuild the gameplay area
 
-function buildGamePlayArea (
-let div = document.playArea.createElement('div');
-div.innerHTML = `<div id="play-area" class="play-area-pane">`;
-let innerPlayArea = document.getElementsById('play-area')
-let div = document.innerPlayArea.createElement('div');
-div.innerHTML = `<div class="left-pane-fire"></div>`;
-div.innerHTML = `<div class="right-pane-retain"></div>`;
-
-let div = document.playArea.createElement('div');
-div.innerHTML = `<div id="timer-box">Time</div>`;
-div.innerHTML = `<div id="employee-profile-container">
-          <img
-            src="img/employee_profile_placeholder.svg"
-            alt="placeholder image for employee profiles measuring 1000x500px"
-          />
-        </div>`;
-div.innerHTML = `<div id="humans-correctly-resourced">
-          <p>Employees Processed Correctly: ${count}</p>
-        </div>`;
-div.innerHTML = `<div id="retain">Retain</div>`;
-)
+function buildGamePlayArea (){
+  let div = document.playArea.createElement('div');
+  div.innerHTML = `<div id="play-area" class="play-area-pane">`;
+  let innerPlayArea = document.getElementsById('play-area');
+  div = document.innerPlayArea.createElement('div');
+  div.innerHTML = `<div class="left-pane-fire"></div>`;
+  div.innerHTML = `<div class="right-pane-retain"></div>`;
+  div = document.playArea.createElement('div');
+  div.innerHTML = `<div id="timer-box">Time</div>`;
+  div.innerHTML = `<div id="employee-profile-container">
+            <img
+              src="img/employee_profile_placeholder.svg"
+              alt="placeholder image for employee profiles measuring 1000x500px"
+            />
+          </div>`;
+  div.innerHTML = `<div id="humans-correctly-resourced">
+            <p>Employees Processed Correctly: ${count}</p>
+          </div>`;
+  div.innerHTML = `<div id="retain">Retain</div>`;
+}
 
 
 //Executables
