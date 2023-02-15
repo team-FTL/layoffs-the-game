@@ -29,7 +29,6 @@ if (localStorage.getItem('session') !== null) {
 console.log(gamerName);
 console.log(score);
 
-
 new Chart(ctx, {
   type: 'bar',
   data: {
