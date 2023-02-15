@@ -1,54 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Layoffs The Game</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="leaderboard.html">Leaderboard</a>
-        <a href="about-us.html">About Us</a>
-      </nav>
-    </header>
-    <img
-      src="https://place-hold.it/1000x300"
-      id="hero-image"
-      alt="game name and description of the hero image"
-    />
 
-    
-    <main>
-      <div id="form-name">
-        <form>
-          <label>
-            <input type="text" name="username" placeholder="Enter you name." required>
-          </label>
-          <button type="submit" id="submit">Start</button>
-        </form>
-        <div id="welcome-user"></div>
-      </div>
-      <div id="outer-gameplay-area">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Layoffs The Game</title>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="about-us.html">About Us</a>
+    </nav>
+  </header>
+  <img src="https://place-hold.it/1000x300" id="hero-image" alt="game name and description of the hero image" />
+
+
+  <main>
+    <div id="form-name">
+      <form>
+        <label>
+          <input type="text" name="username" placeholder="Enter you name." required>
+        </label>
+        <button type="submit" id="submit">Start</button>
+      </form>
+      <div id="welcome-user"></div>
+    </div>
+    <div id="outer-gameplay-area">
       <div id="fire">Fire</div>
-      <div class="gameplay-area">
-      <!-- TODO: where players click on the div, it will register the click -->
-      <div class="play-area-pane">
-        <div class="left-pane-fire"></div>
-        <div class="right-pane-retain"></div>
-      </div>
+      <div id="gameplay-area">
+        <!-- TODO: where players click on the div, it will register the click -->
+        <div class="play-area-pane">
+          <div class="left-pane-fire"></div>
+          <div class="right-pane-retain"></div>
+        </div>
 
-      <div id="timer-box">Time</div>
+        <div id="timer-box">Time</div>
         <div id="employee-profile-container">
           <p id="employeeName"></p>
-          <img id="profileRender"
-            src="img/employee_profile_placeholder.svg"
-            alt="placeholder image for employee profiles measuring 1000x500px"
-          />
+          <img id="profileRender" src="img/employee_profile_placeholder.svg"
+            alt="placeholder image for employee profiles measuring 1000x500px" />
         </div>
         <div id="humans-correctly-resourced">
           <p>Employees Processed Correctly: ${count}</p>
@@ -56,41 +52,28 @@
       </div>
       <div id="retain">Retain</div>
     </div>
-      <section class="instruction-area">
-        <h2 id="instruction-title">Instructions</h2>
-        <div id="instruction-img">
-          <div id="good-fire-example-div">
-            <img
-              src="img/greenDown.svg"
-              alt="stand-in image for FIRE choice"
-              class="good-fire-example"
-            />
+    <section class="instruction-area">
+      <h2 id="instruction-title">Instructions</h2>
+      <div id="instruction-img">
+        <div id="good-fire-example-div">
+          <img src="img/greenDown.svg" alt="stand-in image for FIRE choice" class="good-fire-example" />
 
-            <img
-              src="img/redUp_1.svg"
-              alt="stand-in image for FIRE choice"
-              class="good-fire-example"
-            />
-            <p>Fire!</p>
-          </div>
-          <div id="good-retain-example-div">
-            <img
-              src="img/greenUp.svg"
-              alt="stand-in image for RETAIN choice"
-              class="good-retain-example"
-            />
+          <img src="img/redUp_1.svg" alt="stand-in image for FIRE choice" class="good-fire-example" />
+          <p>Fire!</p>
+        </div>
+        <div id="good-retain-example-div">
+          <img src="img/greenUp.svg" alt="stand-in image for RETAIN choice" class="good-retain-example" />
 
 
-          <img
-            src="img/redDown_1.svg"
-            alt="stand-in image for RETAIN choice"
-            class="good-retain-example"
-          />
+          <img src="img/redDown_1.svg" alt="stand-in image for RETAIN choice" class="good-retain-example" />
           <p>Retain!</p>
         </div>
-      </section>
-      <footer><p>Made with acknowledgments to The Firm.</p></footer>
-    </main>
-    <script src="js/app.js"></script>
-  </body>
+    </section>
+    <footer>
+      <p>Made with acknowledgments to The Firm.</p>
+    </footer>
+  </main>
+  <script src="js/app.js"></script>
+</body>
+
 </html>
