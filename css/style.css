@@ -39,6 +39,11 @@ nav a:hover {
   margin-bottom: 50px;
 }
 
+#profileRender {
+  width: 1000px;
+  height: 500px;
+}
+
 /* .play-area-pane {
   display: flex;
   width: 1200px;
