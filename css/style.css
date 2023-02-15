@@ -149,7 +149,7 @@ nav a:hover {
   margin-bottom: 20px;
 }
 
-#leaderboardBtn {
+#leaderboardBtn a {
   margin: 20px 20px;
   display: inline-block;
   text-align: center;
@@ -163,7 +163,7 @@ nav a:hover {
 
 }
 
-#leaderboardBtn:hover{
+#leaderboardBtn a:hover{
   background-color: rgb(0, 183, 224);
   cursor: pointer;
 }
