@@ -71,13 +71,31 @@ nav a:hover {
 
 #outer-gameplay-area {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 50px;
-  width: 1000px;
+  width: 80%;
   height: 700px;
   margin: 10px auto;
 
+}
+
+#gameplay-area {
+  display: flex;
+  width: 1000px;
+  height: 700px;
+  margin: auto;
+  border-width: 2px;
+  border-style: solid;
+  border-color: darkblue;
+  background-color: rgb(219, 219, 219);
+}
+
+#form-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }
 
 #fire {
