@@ -3,12 +3,24 @@
 const ctx = document.getElementById('myChart');
 
 // Global variables
+// session array initialized here
+
 let session = [];
 
+// pulling saved scores from localStorage, then using a sorting function to sort the array of high scores
 
+if (localStorage.getItem('session') !== null) {
+  let loadScores = JSON.parse(localStorage.getItem('session'));
+  let sortedHighScores = (loadScores) => {
+    return loadScores.sort((a, b) => {
+      return b.goodCall - a.goodCall;
+    } );
+  }
+  sortedHighScores();
+  console.log(sortedHighScores);
+}
 
-
-// TODO: replace gamerName, score with array from localstorage
+// TODO: replace gamerName, score with array from localStorage
 let gamerName = ['David', 'Tony', 'Alex'];
 let score = [10, 16, 22];
 
