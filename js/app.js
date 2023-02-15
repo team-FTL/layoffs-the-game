@@ -3,11 +3,16 @@
 //Global variables
 const randomNames = ["Malcolm Hull", "Zain Faulk", "Elvin Geiger", "Brock Noe", "Ibrahim Mull", "Alanis Dillon", "Ajay Barrios", "Braydon Braden", "Chaz Nesbitt", "Spencer Saylor", "Romeo Fogle", "Mickayla Shearer", "Madilyn Babcock", "Evelyn McNeal", "Bayley Leon", "Amberly Carrillo", "Annabella Vogel", "Kylie Francisco", "Katy Acosta", "Rayna Balderas", "Jackie Scholl", "Nico Templeton", "Perla Hoyt", "Antwan Plummer", "Zainab Baughman", "Kurt Mojica", "Octavia Hammer", "Maura Swope", "Ashton Gilman", "Beth Keefe", "Priscila Read", "Catherine Rubio", "Reilly Cardona", "Neha Mortensen", "Celia Hagen", "Zaria Schumacher", "Elsa McIntire", "Rylan Walden", "Jaren Burks", "Rylan Volk", "Allyson Dempsey", "Paxton Kroll", "Kenton Knight", "Shelbi Slack", "Demond Doucette", "Trever Epperson", "Cesar Donnell", "Landen Grove", "Juana Gabriel", "Zavier Isbell"];
 
-let session = [];
+const listOfSessions = [];
 
 const graphs = ["greenDown", "greenUp", "redDown", "redUp"];
 
 const listOfProfiles = [];
+
+//DOM windows
+let formName = document.getElementById('form-name');
+let retainButton = document.getElementById('retain');
+let fireButton = document.getElementById('fire');
 
 //Profile Object
 function Profile(name, fileName, fileExt = 'svg') {
@@ -32,23 +37,34 @@ function pickRandomGraph() {
 }
 
 //Form - username
-let formName = document.getElementById('form-name');
-function getName(e){
-  event.preventDefault();
+
+function getName(e) {
+  e.preventDefault();
   //user input name stored in a variable = username
   let username = e.target.username.value;
   let welcomeUserHTML = document.getElementById('welcome-user');
   let welcomeUser = document.createElement('p');
   welcomeUser.innerText = `Welcome, ${username}!`;
   welcomeUserHTML.appendChild(welcomeUser);
-  timer();
+
+  listOfSessions[listOfSessions.length - 1].name = username;
+  listOfSessions[listOfSessions.length - 1].goodCall = 0;
+
+  startTimer();
 }
-formName.addEventListener('submit',getName);
+
 
 // Timer function
-function timer() {
+function startTimer() {
+  //add eventHandler for game button
+  retainButton.addEventListener('click', retain);
+  fireButton.addEventListener('click', retain);
+
+
   const timerHTML = document.getElementById('timer-box');
   let countDownTimer = 60;
+
+  //function to display number
   let countDown = function () {
     timerHTML.innerHTML = `${countDownTimer--} sec left`;
     if (countDownTimer < 0) {
@@ -57,14 +73,36 @@ function timer() {
 
       timerHTML.innerHTML = 'Times up';
       // window.location.reload(); // auto refresh page function CAN be used with restart button
+
+      saveState();
     }
   };
+
+  //function "countDown" to run every second
   let startCountDown = setInterval(countDown, 1000);
 }
 
-//Executables
-generateListOfProfiles();
+function retain(e) {
+  e.preventDefault();
 
+  let image = document.querySelector('#employee-profile-container img').src;
+
+  if (image.includes('greenUp') || image.includes('redDown')) {
+    listOfSessions[listOfSessions.length - 1].goodCall++
+  }
+  renderProfile();
+} 
+
+function fire(e) {
+  e.preventDefault();
+  
+  let image = document.querySelector('#employee-profile-container img').src;
+
+  if (image.includes('greenDown') || image.includes('redUp')) {
+    listOfSessions[listOfSessions.length - 1].goodCall++
+  }
+  renderProfile();
+}
 
 // Local Storage functions
 // We're creating local storage functions that saves the results of the game to a leaderboard: the user name, number of correct choices, and number of incorrect choices.  We also initialize the local storage if it has not been done before, and we DON'T initialize a new local storage if it has so we don't wipe the leaderboard.  Game results are contained in a object called session.
@@ -74,7 +112,7 @@ generateListOfProfiles();
 //   this.goodCall = goodCall;
 //   this.badCall = badCall; 
 // }
-  
+
 
 // saveState can save game session results to localStorage
 function saveState() {
@@ -84,30 +122,28 @@ function saveState() {
 
 
 // Constructor function for session data
-function Session (name, goodCall) {
+function Session(name, goodCall) {
   this.name = name;
   this.goodCall = goodCall;
   // this.badCall = badCall; 
 }
 
-if (!localStorage.getItem('session')) {
-  // if localStorage does NOT find something called session, it creates a fresh empty session.
-  let createSession = new Session('testUser', 8);
-  session.push(createSession);
-  console.log(session);
-  saveState();
-} else {
-  let loadState = localStorage.getItem('session'); 
-  session = JSON.parse(loadState);
-  console.log(session);
+function checkLocalStorage() {
+  let newSession = new Session();
+
+  if (!localStorage.getItem('session')) {
+    // if localStorage does NOT find something called session, it creates a fresh empty session.
+    listOfSessions.push(newSession);
+  } else { 
+    let loadState = localStorage.getItem('session');
+    listOfSessions = JSON.parse(loadState);
+
+    listOfSessions.push(newSession);
+  }
 }
-// if (!localStorage.getItem('session')) {
-//   // if localStorage does NOT find something called session, it creates a fresh empty session.  
-//   new Session (); // T0D0: pass in w/ actual form data
-
-//   }
 
 
-
-
-
+//Executables
+checkLocalStorage();
+generateListOfProfiles();
+formName.addEventListener('submit', getName);
