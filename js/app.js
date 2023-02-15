@@ -39,16 +39,16 @@ function pickRandomGraph() {
 
 // render profile function
 function renderProfile() {
-  let profileContainer = document.getElementById('timer-box'); //cant get employee-profile-container to work, using timer instead
+  let profileContainer = document.getElementById('timer-box'); 
+
+  let employeeName = document.getElementById('employeeName');
   let profileImg = document.getElementById('profileRender');
-  let profileName = document.createElement('p');
   let rng = function () {
     return Math.floor(Math.random() * listOfProfiles.length);
   };
   let number = rng();
-  profileName.innerText = `${listOfProfiles[number].name}'s performance`;
+  employeeName.innerText = `${listOfProfiles[number].name}'s performance`;
   profileImg.src = listOfProfiles[number].graph;
-  profileContainer.appendChild(profileName);
   listOfProfiles.splice(number,1);
 }
 
@@ -76,16 +76,18 @@ function startTimer() {
   //add eventHandler for game button
   retainButton.addEventListener('click', retain);
   fireButton.addEventListener('click', retain);
-
+  renderProfile();
 
   const timerHTML = document.getElementById('timer-box');
-  let countDownTimer = 60;
+  let countDownTimer = 10;
 
   //function to display number
   let countDown = function () {
     timerHTML.innerHTML = `${countDownTimer--} sec left`;
     if (countDownTimer < 0) {
       clearInterval(startCountDown);
+      retainButton.removeEventListener('click', retain);
+      fireButton.removeEventListener('click', retain);
       // TODO: remove eventListeners + render results + option to restart the game
 
       timerHTML.innerHTML = 'Times up';
