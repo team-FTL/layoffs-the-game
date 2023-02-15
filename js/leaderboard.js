@@ -7,22 +7,64 @@ const ctx = document.getElementById('myChart');
 
 let session = [];
 
+
+// testing functions for the high score board
+
+
+let testScoresArray = [  //this is how our session objects SHOULD look when we pull and parse them from localStorage
+  {
+    "name": "kyle",
+    "goodCall": 13
+  },
+  {
+    "name": "tom",
+    "goodCall": 22
+  },
+  {
+    "name": "jon",
+    "goodCall": 33
+  },
+  {
+    "name": "kate",
+    "goodCall": 35
+  },
+  {
+    "name": "kathy",
+    "goodCall": 19
+  }];
+
+function testSaveToStorage() {
+  let processedSaveState = JSON.stringify('testScoresArray');
+  localStorage.setItem('session', processedSaveState);
+}
+testSaveToStorage();
+
+
 // pulling saved scores from localStorage, then using a sorting function to sort the array of high scores
+
+// TODO: replace gamerName, score with array from localStorage.  We're trying to fill in the gamerName and score arrays with our data from localStorage.  I have a 
+let gamerName = [];
+let score = [];
 
 if (localStorage.getItem('session') !== null) {
   let loadScores = JSON.parse(localStorage.getItem('session'));
-  let sortedHighScores = (loadScores) => {
-    return loadScores.sort((a, b) => {
+  let sortedHighScores = (array) => {
+    return array.sort((a, b) => {
       return b.goodCall - a.goodCall;
-    } );
-  }
-  sortedHighScores();
-  console.log(sortedHighScores);
-}
+    });
+    // return array;
+  };
+  let sortedArray = sortedHighScores(testScoresArray);
+  sortedArray.forEach(playerSession => {
+    gamerName.push(playerSession.name);
+    score.push(playerSession.goodCall);
+  });
+  console.log(sortedArray);
+};
 
-// TODO: replace gamerName, score with array from localStorage
-let gamerName = ['David', 'Tony', 'Alex'];
-let score = [10, 16, 22];
+console.log(gamerName);
+console.log(score);
+
 
 new Chart(ctx, {
   type: 'bar',
