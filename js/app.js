@@ -71,7 +71,6 @@ function getName(e) {
 
   startTimer();
 }
-
 // Timer function
 function startTimer() {
   //add eventHandler for game button
@@ -195,10 +194,31 @@ function buildGamePlayArea() {
     </div>`;
 }
 
+// render end screen
+function renderEndScreen(){
+  let playArea = document.getElementById('gameplay-area');
+  let greeting = document.createElement('p');
+  let leaderboardBtn = document.createElement('section');
+  let restartBtn = document.createElement('div');
+  greeting.innerText = ` ${listOfSessions[listOfSessions.length - 1].name}'s score is ${listOfSessions[listOfSessions.length - 1].goodCall}`;
+  leaderboardBtn.innerHTML = '<a href="leaderboard.html"> Go to Leaderboard</a>';
+  restartBtn.textContent = 'Restart';
+  playArea.appendChild(greeting);
+  greeting.appendChild(leaderboardBtn);
+  leaderboardBtn.appendChild(restartBtn);
+  restartBtn.addEventListener('click',restart);
+  function restart(){
+    location.reload();
+  }
+}
+// renderEndScreen();
+
 //Executables
 checkLocalStorage();
 generateListOfProfiles();
 formName.addEventListener('submit', getName);
+
+
 
 
 
