@@ -31,7 +31,7 @@ function generateListOfProfiles() {
 
 function pickRandomGraph() {
   let randomType = graphs[Math.floor(Math.random() * graphs.length)];
-  let randomNumber = Math.floor(Math.random() * 10);
+  let randomNumber = Math.floor(Math.random() * 10) + 1;
 
   return `${randomType}_${randomNumber}`
 }
@@ -82,6 +82,7 @@ function startTimer() {
   let startCountDown = setInterval(countDown, 1000);
 }
 
+//Event Handlers for Game Buttons
 function retain(e) {
   e.preventDefault();
 
