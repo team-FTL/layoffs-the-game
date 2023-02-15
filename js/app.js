@@ -167,11 +167,15 @@ function checkLocalStorage() {
 // innerHTML 
 
 // When used after the form is complete, playArea clears uses innerHTML to clear out everything under the gameplay-area after the 
+
+function clearPlayArea (
 let playArea = document.getElementsById('gameplay-area');
 document.playArea.innerHTML = '';
+)
 
 // then we use innerHTML to rebuild the gameplay area
 
+function buildGamePlayArea (
 let div = document.playArea.createElement('div');
 div.innerHTML = `<div id="play-area" class="play-area-pane">`;
 let innerPlayArea = document.getElementsById('play-area')
@@ -191,6 +195,7 @@ div.innerHTML = `<div id="humans-correctly-resourced">
           <p>Employees Processed Correctly: ${count}</p>
         </div>`;
 div.innerHTML = `<div id="retain">Retain</div>`;
+)
 
 
 //Executables
