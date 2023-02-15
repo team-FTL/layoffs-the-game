@@ -24,8 +24,9 @@ function Profile(name, fileName, fileExt = 'svg') {
 function generateListOfProfiles() {
   randomNames.forEach(name => {
     let randomGraph = pickRandomGraph();
-    listOfProfiles.push(new Profile(name, randomGraph))
-  })
+
+    listOfProfiles.push(new Profile(name, randomGraph));
+  });
 }
 
 
@@ -33,8 +34,25 @@ function pickRandomGraph() {
   let randomType = graphs[Math.floor(Math.random() * graphs.length)];
   let randomNumber = Math.floor(Math.random() * 10) + 1;
 
-  return `${randomType}_${randomNumber}`
+  return `${randomType}_${randomNumber}`;
 }
+
+// render profile function
+function renderProfile() {
+  let profileContainer = document.getElementById('timer-box'); //cant get employee-profile-container to work, using timer instead
+  let profileImg = document.getElementById('profileRender');
+  let profileName = document.createElement('p');
+  let rng = function () {
+    return Math.floor(Math.random() * listOfProfiles.length);
+  };
+  let number = rng();
+  profileName.innerText = `${listOfProfiles[number].name}'s performance`;
+  profileImg.src = listOfProfiles[number].graph;
+  profileContainer.appendChild(profileName);
+  listOfProfiles.splice(number,1);
+}
+
+
 
 //Form - username
 
@@ -52,7 +70,6 @@ function getName(e) {
 
   startTimer();
 }
-
 
 // Timer function
 function startTimer() {
@@ -128,6 +145,7 @@ function Session(name, goodCall) {
   this.goodCall = goodCall;
   // this.badCall = badCall; 
 }
+
 
 function checkLocalStorage() {
   let newSession = new Session();
