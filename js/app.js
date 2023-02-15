@@ -140,11 +140,9 @@ function retain(e) {
   if (imageName.includes('greenUp') || imageName.includes('redDown')) {
     listOfSessions[listOfSessions.length - 1].goodCall++;
   } else {
-    renderProfile();
     gameArea.className = 'notify';
+    renderProfile();
   }
-
-  renderProfile();
 }
 
 function fire(e) {
@@ -156,10 +154,9 @@ function fire(e) {
   if (imageName.includes('greenDown') || imageName.includes('redUp')) {
     listOfSessions[listOfSessions.length - 1].goodCall++;
   } else {
-    renderProfile();
     gameArea.className = 'notify';
+    renderProfile();
   }
-
   renderProfile();
 }
 
