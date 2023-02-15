@@ -112,11 +112,11 @@ nav a:hover {
   cursor: pointer;
 }
 
-.gameplay-area {
-  /* display: block; */
-  /* width: 1000px;
-  height: 700px; */
-  /* margin: auto; */
+#gameplay-area {
+  display: block;
+  width: 1000px;
+  height: 700px;
+  margin: auto;
   border-width: 2px;
   border-style: solid;
   border-color: darkblue;

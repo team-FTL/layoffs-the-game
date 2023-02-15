@@ -40,7 +40,7 @@ function pickRandomGraph() {
 
 // render profile function
 function renderProfile() {
-  let profileContainer = document.getElementById('timer-box'); 
+  let profileContainer = document.getElementById('timer-box');
 
   let employeeName = document.getElementById('employeeName');
   let profileImg = document.getElementById('profileRender');
@@ -50,7 +50,7 @@ function renderProfile() {
   let number = rng();
   employeeName.innerText = `${listOfProfiles[number].name}'s performance`;
   profileImg.src = listOfProfiles[number].graph;
-  listOfProfiles.splice(number,1);
+  listOfProfiles.splice(number, 1);
 }
 
 
@@ -112,11 +112,11 @@ function retain(e) {
     listOfSessions[listOfSessions.length - 1].goodCall++
   }
   renderProfile();
-} 
+}
 
 function fire(e) {
   e.preventDefault();
-  
+
   let image = document.querySelector('#employee-profile-container img').src;
 
   if (image.includes('greenDown') || image.includes('redUp')) {
@@ -156,7 +156,7 @@ function checkLocalStorage() {
   if (!localStorage.getItem('session')) {
     // if localStorage does NOT find something called session, it creates a fresh empty session.
     listOfSessions.push(newSession);
-  } else { 
+  } else {
     let loadState = localStorage.getItem('session');
     listOfSessions = JSON.parse(loadState);
 
@@ -168,35 +168,32 @@ function checkLocalStorage() {
 
 // When used after the form is complete, playArea clears uses innerHTML to clear out everything under the gameplay-area after the 
 
-function clearPlayArea (
-let playArea = document.getElementsById('gameplay-area');
-document.playArea.innerHTML = '';
-)
+function clearPlayArea() {
+  let playArea = document.getElementById('gameplay-area');
+  console.log(playArea);
+  playArea.innerHTML ='';
+}
 
 // then we use innerHTML to rebuild the gameplay area
 
-function buildGamePlayArea (
-let div = document.playArea.createElement('div');
-div.innerHTML = `<div id="play-area" class="play-area-pane">`;
-let innerPlayArea = document.getElementsById('play-area')
-let div = document.innerPlayArea.createElement('div');
-div.innerHTML = `<div class="left-pane-fire"></div>`;
-div.innerHTML = `<div class="right-pane-retain"></div>`;
-
-let div = document.playArea.createElement('div');
-div.innerHTML = `<div id="timer-box">Time</div>`;
-div.innerHTML = `<div id="employee-profile-container">
-          <img
-            src="img/employee_profile_placeholder.svg"
-            alt="placeholder image for employee profiles measuring 1000x500px"
-          />
-        </div>`;
-div.innerHTML = `<div id="humans-correctly-resourced">
-          <p>Employees Processed Correctly: ${count}</p>
-        </div>`;
-div.innerHTML = `<div id="retain">Retain</div>`;
-)
-
+function buildGamePlayArea() {
+  let playArea = document.getElementById('gameplay-area');
+  playArea.innerHTML = `<div id="play-area" class="play-area-pane">`;
+  let innerPlayArea = document.getElementById('play-area');
+  
+  innerPlayArea.innerHTML = `<div class="left-pane-fire"></div>
+    <div class="right-pane-retain"></div>
+    <div id="timer-box">Time</div>
+    <div id="employee-profile-container">
+      <img
+        src="img/employee_profile_placeholder.svg"
+        alt="placeholder image for employee profiles measuring 1000x500px"
+      />
+    </div>
+    <div id="humans-correctly-resourced">
+      <p>Employees Processed Correctly: count</p>
+    </div>`;
+}
 
 //Executables
 checkLocalStorage();
