@@ -12,15 +12,16 @@ const listOfProfiles = [];
 //Profile Object
 function Profile(name, fileName, fileExt = 'svg') {
   this.name = name;
-  this.graph = `img/graphs/${fileName}.${fileExt}`
+  this.graph = `img/graphs/${fileName}.${fileExt}`;
 }
 
 // Generate Random Profiles
 function generateListOfProfiles() {
   randomNames.forEach(name => {
     let randomGraph = pickRandomGraph();
-    listOfProfiles.push(new Profile(name, randomGraph))
-  })
+
+    listOfProfiles.push(new Profile(name, randomGraph));
+  });
 }
 
 
@@ -28,13 +29,30 @@ function pickRandomGraph() {
   let randomType = graphs[Math.floor(Math.random() * graphs.length)];
   let randomNumber = Math.floor(Math.random() * 10);
 
-  return `${randomType}_${randomNumber}`
+  return `${randomType}_${randomNumber}`;
 }
+
+// render profile function
+function renderProfile() {
+  let profileContainer = document.getElementById('timer-box'); //cant get employee-profile-container to work, using timer instead
+  let profileImg = document.getElementById('profileRender');
+  let profileName = document.createElement('p');
+  let rng = function () {
+    return Math.floor(Math.random() * listOfProfiles.length);
+  };
+  let number = rng();
+  profileName.innerText = `${listOfProfiles[number].name}'s performance`;
+  profileImg.src = listOfProfiles[number].graph;
+  profileContainer.appendChild(profileName);
+  listOfProfiles.splice(number,1);
+}
+
+
 
 //Form - username
 let formName = document.getElementById('form-name');
-function getName(e){
-  event.preventDefault();
+function getName(e) {
+  e.preventDefault();
   //user input name stored in a variable = username
   let username = e.target.username.value;
   let welcomeUserHTML = document.getElementById('welcome-user');
@@ -43,7 +61,7 @@ function getName(e){
   welcomeUserHTML.appendChild(welcomeUser);
   timer();
 }
-formName.addEventListener('submit',getName);
+formName.addEventListener('submit', getName);
 
 // Timer function
 function timer() {
@@ -64,7 +82,8 @@ function timer() {
 
 //Executables
 generateListOfProfiles();
-
+renderProfile();
+console.log(listOfProfiles);
 
 // Local Storage functions
 // We're creating local storage functions that saves the results of the game to a leaderboard: the user name, number of correct choices, and number of incorrect choices.  We also initialize the local storage if it has not been done before, and we DON'T initialize a new local storage if it has so we don't wipe the leaderboard.  Game results are contained in a object called session.
@@ -74,7 +93,7 @@ generateListOfProfiles();
 //   this.goodCall = goodCall;
 //   this.badCall = badCall; 
 // }
-  
+
 
 // saveState can save game session results to localStorage
 function saveState() {
@@ -84,7 +103,7 @@ function saveState() {
 
 
 // Constructor function for session data
-function Session (name, goodCall) {
+function Session(name, goodCall) {
   this.name = name;
   this.goodCall = goodCall;
   // this.badCall = badCall; 
@@ -97,7 +116,7 @@ if (!localStorage.getItem('session')) {
   console.log(session);
   saveState();
 } else {
-  let loadState = localStorage.getItem('session'); 
+  let loadState = localStorage.getItem('session');
   session = JSON.parse(loadState);
   console.log(session);
 }
