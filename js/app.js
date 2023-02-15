@@ -67,7 +67,6 @@ function pickRandomGraph() {
 function renderProfile() {
   let employeeName = document.getElementById('employeeName');
   let profileImg = document.getElementById('profileRender');
-  let gameArea = document.getElementById('employee-profile-container');
 
   let number = Math.floor(Math.random() * listOfProfiles.length)
 
@@ -111,7 +110,7 @@ function startTimer() {
   renderProfile();
 
   const timerHTML = document.getElementById('timer-box');
-  let countDownTimer = 60;
+  let countDownTimer = 3;
 
   //function to display number
   let countDown = function () {
@@ -121,8 +120,10 @@ function startTimer() {
       retainButton.removeEventListener('click', retain);
       fireButton.removeEventListener('click', fire);
 
-      timerHTML.innerHTML = 'Times up';
       saveState();
+
+      clearPlayArea();
+      renderEndScreen();
     }
   };
 
@@ -143,6 +144,7 @@ function retain(e) {
     gameArea.className = 'notify';
     renderProfile();
   }
+  renderProfile();
 }
 
 function fire(e) {
@@ -202,7 +204,6 @@ checkLocalStorage();
 generateListOfProfiles();
 formName.addEventListener('submit', getName);
 
-clearPlayArea();
-renderEndScreen();
+
 
 
