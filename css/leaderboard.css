@@ -73,14 +73,15 @@ h1 {
   text-decoration: none;
   padding: 10px 30px;
   border-radius: 10px;
-  transition-duration: 400ms;
+  transition-duration: 300ms;
   align-items: center;
 
 }
 
-#reseLeaderboard:hover {
-  background-color: rgba(247, 116, 1, 0.79);
-  color: white;
+#resetLeaderboard:hover {
+  background-color: rgb(99, 99, 99);
+  color: rgb(255, 255, 255);
+
 }
 
 footer {
