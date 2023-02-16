@@ -21,15 +21,15 @@
       <a href="about-us.html">About Us</a>
     </nav>
   </header>
+<img src="img/UI/soundon.svg" id="mute">
 <h1>Layoffs: The Game</h1>
-
   <main>
     <div id="empty"> </div>
     <div id="outer-gameplay-area">
       <div id="fire">Fire</div>
       <div id="gameplay-area">
         <div id="form-name">
-          <p id="intro">It's Q1 of 2023. You're the senior HR lead. Leadership has misplaced most of their formal directives for you. All you know is everyone in the company - including you - has been put into a Performance Improvement Plan (PIP). Everyone is either <span class="hv">Highly Valued (HV)</span> or <span class="le">Least Effective (LE)</span>. You need to process as many employees as possible before the all staff begins.<br><br><span class="allStaff">In 20 seconds.</span></p>
+          <p id="intro">It's Q1 of 2023. You're the senior HR lead. Leadership has misplaced most of their formal directives for you. All you know is everyone in the company <span id='you'>- including you -</span> has been put into a Performance Improvement Plan (PIP). Everyone is either <span class="hv">Highly Valued (HV)</span> or <span class="le">Least Effective (LE)</span>. You need to process as many employees as possible before the all staff begins.</p>
           <form>
             <label>
               <input type="text" name="username" placeholder="HRNet Login Required" required>
@@ -37,7 +37,6 @@
             <button type="submit" id="submit">LOG IN</button>
           </form>
           <p id="instructions"><br>Your only guidance is a hasty Slack message from your skip level: retain <span class='hv'>HIGHLY productive workers </span>and keep the <span class="le">LEAST disruptive employees</span>, but lose the <span class="hv">WORSENING profit centers</span> and fire the <span class="le">MOST unhappy people</span>.</p>
-          <p><br>That's.. great.  Really great.</p>
           <!-- <section class="instruction-area">
             <h2 id="instruction-title">Instructions</h2>
             <div id="instruction-img">
@@ -49,12 +48,10 @@
               </div>
               <div id="good-retain-example-div">
                 <img src="img/greenUp.svg" alt="stand-in image for RETAIN choice" class="good-retain-example" />
-      
-      
                 <img src="img/redDown_1.svg" alt="stand-in image for RETAIN choice" class="good-retain-example" />
                 <p>Retain!</p>
               </div>
-          </section> -->
+          </section>
           <div id="welcome-user"></div>
         </div>
       </div>

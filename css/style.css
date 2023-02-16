@@ -42,8 +42,16 @@ nav a:hover {
 
 }
 
-#empty{
+#empty {
   height: 240px;
+}
+
+#mute {
+  position: absolute;
+  top: 120px;
+  right: 40px;
+  height: 30px;
+  border: 2px solid black;
 }
 
 h1 {
@@ -52,11 +60,8 @@ h1 {
   text-align: center;
   font-weight: bold;
   color: rgb(0, 0, 0);
-
   margin-top: 100px;
   margin-bottom: 50px;
-
-
   letter-spacing: 0.2em;
 }
 
@@ -70,6 +75,9 @@ h1 {
   text-align: left;
 }
 
+#you {
+font-weight: 600;
+}
 
 #outer-gameplay-area {
   display: flex;
@@ -108,10 +116,10 @@ h1 {
 }
 
 #employee-profile-container {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
 }
 
@@ -178,17 +186,21 @@ align-items: center;
   display: inline-block;
   text-align: center;
   font-size: 25px;
-  background-color: rgb(4, 119, 145);
+  background-color: rgb(154, 154, 154);
   text-decoration: none;
-  color: white;
-  border-radius: 10px;
+  color: rgb(255, 255, 255);
+  border-color: rgb(81, 81, 81);
   padding: 10px 30px;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
   transition: 100ms;
 
 }
 
+
 #leaderboardBtn a:hover{
-  background-color: rgb(0, 183, 224);
+  background-color: rgb(108, 108, 108);
   cursor: pointer;
 }
 
@@ -199,8 +211,12 @@ align-items: center;
   align-items: center;
   text-align: center;
   font-size: 25px;
-  background-color: rgb(83, 0, 134);
+  background-color: rgb(154, 154, 154);
   color: white;
+  border-color: rgb(81, 81, 81);
+  padding: 10px 30px;
+  border-style: solid;
+  border-width: 2px;
   border-radius: 10px;
   text-decoration: none;
   transition: 100ms;
@@ -210,7 +226,7 @@ align-items: center;
 }
 
 #restartBtn:hover {
-  background-color: rgb(131, 3, 211);
+  background-color: rgb(108, 108, 108);
   cursor: pointer;
 }
 
@@ -257,17 +273,49 @@ footer {
 }
 
 @keyframes shake {
-  0% { transform: translate(1px, 1px) rotate(0deg); }
-  10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-3px, 0px) rotate(1deg); }
-  30% { transform: translate(3px, 2px) rotate(0deg); }
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) rotate(-1deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(3px, 1px) rotate(-1deg); }
-  80% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(1px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); }
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
 }
 
 .notify {

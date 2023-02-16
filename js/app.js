@@ -3,6 +3,8 @@
 //Global variables ------------------------------------------------------
 const randomNames = ["Malcolm Hull", "Zain Faulk", "Elvin Geiger", "Brock Noe", "Ibrahim Mull", "Alanis Dillon", "Ajay Barrios", "Braydon Braden", "Chaz Nesbitt", "Spencer Saylor", "Romeo Fogle", "Mickayla Shearer", "Madilyn Babcock", "Evelyn McNeal", "Bayley Leon", "Amberly Carrillo", "Annabella Vogel", "Kylie Francisco", "Katy Acosta", "Rayna Balderas", "Jackie Scholl", "Nico Templeton", "Perla Hoyt", "Antwan Plummer", "Zainab Baughman", "Kurt Mojica", "Octavia Hammer", "Maura Swope", "Ashton Gilman", "Beth Keefe", "Priscila Read", "Catherine Rubio", "Reilly Cardona", "Neha Mortensen", "Celia Hagen", "Zaria Schumacher", "Elsa McIntire", "Rylan Walden", "Jaren Burks", "Rylan Volk", "Allyson Dempsey", "Paxton Kroll", "Kenton Knight", "Shelbi Slack", "Demond Doucette", "Trever Epperson", "Cesar Donnell", "Landen Grove", "Juana Gabriel", "Zavier Isbell"];
 
+const clickFX = new Audio('soundtrack/click.mp3')
+
 let listOfSessions = [];
 
 const graphs = ["greenDown", "greenUp", "redDown", "redUp"];
@@ -13,7 +15,7 @@ const listOfProfiles = [];
 let formName = document.getElementById('form-name');
 let retainButton = document.getElementById('retain');
 let fireButton = document.getElementById('fire');
-
+let music = document.querySelector('audio');
 
 // Objects --------------------------------------------------------------------
 function Session(name, goodCall) {
@@ -47,6 +49,12 @@ function checkLocalStorage() {
   }
 }
 
+//Function to set default volume for BG
+function setVolume(audio, num = 0.2) {
+  audio.volume = num;
+  console.log(audio);
+}
+
 // Generate Random Profiles -------------------------------------------------
 function generateListOfProfiles() {
   randomNames.forEach(name => {
@@ -69,8 +77,14 @@ function renderProfile() {
   let profileImg = document.getElementById('profileRender');
 
   let number = Math.floor(Math.random() * listOfProfiles.length)
+  let selectedEmployee = listOfProfiles[number].name;
 
-  employeeName.innerText = `${listOfProfiles[number].name}'s performance`;
+  if (selectedEmployee === listOfSessions[listOfSessions.length - 1].name) {
+    employeeName.innerText = `Careful! This is YOUR performance, ${selectedEmployee}.`;
+  } else {
+    employeeName.innerText = `${selectedEmployee}'s performance`
+  }
+
   profileImg.src = listOfProfiles[number].graph;
 
   listOfProfiles.splice(number, 1);
@@ -78,14 +92,14 @@ function renderProfile() {
 
 function clearPlayArea() {
   let playArea = document.getElementById('gameplay-area');
-  playArea.innerHTML ='';
+  playArea.innerHTML = '';
 }
 
 function buildGamePlayArea() {
   let playArea = document.getElementById('gameplay-area');
   // playArea.innerHTML = `<div id="play-area" class="play-area-pane">`;
   // let innerPlayArea = document.getElementById('play-area');
-  
+
   playArea.innerHTML = `
     <div id="timer-box">Time</div>
     <div id="employee-profile-container">
@@ -95,10 +109,29 @@ function buildGamePlayArea() {
         src="img/employee_profile_placeholder.svg"
         alt="placeholder image for employee profiles measuring 1000x500px"
       />
-    </div>
-    <div id="humans-correctly-resourced">
-      <p>Employees Processed Correctly: count</p>
     </div>`;
+}
+
+function renderEndScreen() {
+  let playArea = document.getElementById('gameplay-area');
+  let scoreCard = document.createElement('div');
+  let leaderboardBtn = document.createElement('div');
+  let restartBtn = document.createElement('div');
+
+  scoreCard.innerText = `Employee ${listOfSessions[listOfSessions.length - 1].name} processed ${listOfSessions[listOfSessions.length - 1].goodCall} profiles. Quota has not been met. You've been arbitrarily laid off.`;
+  scoreCard.setAttribute('id', 'scoreCard');
+
+  leaderboardBtn.innerHTML = '<a href="leaderboard.html"> Go to Leaderboard</a>';
+  leaderboardBtn.setAttribute('id', 'leaderboardBtn');
+  restartBtn.textContent = 'Restart';
+  restartBtn.setAttribute('id', 'restartBtn');
+
+  playArea.appendChild(scoreCard);
+  playArea.appendChild(leaderboardBtn);
+  playArea.appendChild(restartBtn);
+
+  restartBtn.addEventListener('click', restart);
+
 }
 
 // Timer function ---------------------------------------------------------
@@ -133,6 +166,7 @@ function startTimer() {
 //Event Handlers for Form and Game Buttons ------------------------------------
 function retain(e) {
   e.preventDefault();
+  clickFX.play();
 
   let imageName = document.getElementById('profileRender').src;
   let gameArea = document.getElementById('employee-profile-container');
@@ -140,7 +174,7 @@ function retain(e) {
   if (imageName.includes('greenUp') || imageName.includes('redDown')) {
     listOfSessions[listOfSessions.length - 1].goodCall++;
   } else {
-    
+
     gameArea.className = 'notify';
     setTimeout(() => {
       gameArea.classList = '';
@@ -152,6 +186,7 @@ function retain(e) {
 
 function fire(e) {
   e.preventDefault();
+  clickFX.play();
 
   let imageName = document.getElementById('profileRender').src;
   let gameArea = document.getElementById('employee-profile-container');
@@ -171,9 +206,12 @@ function fire(e) {
 
 function getName(e) {
   e.preventDefault();
+  clickFX.play();
   //user input name stored in a variable = username
   let username = e.target.username.value;
 
+  randomNames.push(username);
+  generateListOfProfiles();
   clearPlayArea();
   buildGamePlayArea();
 
@@ -183,38 +221,15 @@ function getName(e) {
   startTimer();
 }
 
-function restart(){
+function restart() {
+  clickFX.play();
   location.reload();
 }
 
-
-// render end screen
-function renderEndScreen(){
-  let playArea = document.getElementById('gameplay-area');
-  let greeting = document.createElement('div');
-  let leaderboardBtn = document.createElement('div');
-  let restartBtn = document.createElement('div');
-
-  greeting.innerText = `Employee ${listOfSessions[listOfSessions.length - 1].name} processed ${listOfSessions[listOfSessions.length - 1].goodCall} profiles.`;
-  greeting.setAttribute('id','greeting');
-
-  leaderboardBtn.innerHTML = '<a href="leaderboard.html"> Go to Leaderboard</a>';
-  leaderboardBtn.setAttribute('id','leaderboardBtn');
-  restartBtn.textContent = 'Restart';
-  restartBtn.setAttribute('id','restartBtn');
-
-  playArea.appendChild(greeting);
-  playArea.appendChild(leaderboardBtn);
-  playArea.appendChild(restartBtn);
-  
-  restartBtn.addEventListener('click',restart);
-
-}
-
-
-//Executables
+//Executables----------------------------------------------------------------
+setVolume(music, 0.05);
+setVolume(clickFX, 1);
 checkLocalStorage();
-generateListOfProfiles();
 formName.addEventListener('submit', getName);
 
 
