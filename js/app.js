@@ -53,7 +53,7 @@ function checkLocalStorage() {
 //Sound Functions
 function setVolume(audio, num = 0.2) {
   audio.volume = num;
-  console.log(audio);
+
 }
 
 function toggleBG() {
@@ -133,7 +133,6 @@ function renderEndScreen() {
   let restartBtn = document.createElement('div');
   
   let currentPlayer = listOfSessions[listOfSessions.length - 1]
-  console.log(currentPlayer.goodCall);
 
   if (currentPlayer.goodCall === 1) {
     scoreCard.innerText = `Employee ${listOfSessions[listOfSessions.length - 1].name} processed ${listOfSessions[listOfSessions.length - 1].goodCall} profile. Quota has not been met. You've been arbitrarily laid off.`;
