@@ -6,7 +6,7 @@ body {
   text-align: center;
   background-image: url("../img/UI/mac.png");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 2200px;
   background-position: center;
   background-color: white;
   font-family: 'DotGothic16', sans-serif;
@@ -60,26 +60,32 @@ h1 {
 } */
 
 #profileRender {
-  width: 1000px;
-  height: 500px;
+  width: 80%;
+  /* height: 300px; */
 }
 
 #outer-gameplay-area {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  gap: 50px;
   width: 80%;
-  height: 700px;
-  margin: 10px auto;
+  height: 500px;
+  margin: auto;
+  margin-top: 250px;
 
 }
 
 #gameplay-area {
   display: flex;
-  width: 1000px;
-  height: 700px;
-  margin: auto;
+  flex-direction: column;
+  justify-content: space-between;
+  /* position: absolute; */
+  width: 600px;
+  height: 400px;
+  margin: 0px auto;
+  /* margin-top: 300px; */
+  /* left: 500px;
+  top: 480px; */
   /* border-width: 2px;
   border-style: solid;
   border-color: darkblue;
@@ -91,6 +97,14 @@ h1 {
   justify-content: center;
   align-items: center;
   margin: auto;
+}
+
+#employee-profile-container {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
 }
 
 #fire {
@@ -131,20 +145,19 @@ h1 {
   display: block;
   font-size: 25px;
   font-weight: bold;
-  margin-top: 30px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 #humans-correctly-resourced {
   display: block;
   font-size: 25px;
   font-weight: bold;
-  margin-top: 30px;
+  margin-top: 10px;
   margin-bottom: 20px;
 }
 
 #greeting {
-  margin-top: 30%;
+  /* margin-top: 30%; */
   text-align: center;
   font-size: 50px;
   font-weight: bold;

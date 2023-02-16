@@ -83,11 +83,10 @@ function clearPlayArea() {
 
 function buildGamePlayArea() {
   let playArea = document.getElementById('gameplay-area');
-  playArea.innerHTML = `<div id="play-area" class="play-area-pane">`;
-  let innerPlayArea = document.getElementById('play-area');
+  // playArea.innerHTML = `<div id="play-area" class="play-area-pane">`;
+  // let innerPlayArea = document.getElementById('play-area');
   
-  innerPlayArea.innerHTML = `<div class="left-pane-fire"></div>
-    <div class="right-pane-retain"></div>
+  playArea.innerHTML = `
     <div id="timer-box">Time</div>
     <div id="employee-profile-container">
       <p id="employeeName"></p>
@@ -110,7 +109,7 @@ function startTimer() {
   renderProfile();
 
   const timerHTML = document.getElementById('timer-box');
-  let countDownTimer = 3;
+  let countDownTimer = 300;
 
   //function to display number
   let countDown = function () {
