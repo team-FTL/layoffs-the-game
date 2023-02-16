@@ -58,7 +58,7 @@ h1 {
   height: 600px;
   border-width: 2px;
   border-style: solid;
-  border-color: darkblue;
+  border-color: rgb(0, 0, 0);
   margin: 50px auto;
   background-color: white;
   display: flex;
@@ -73,14 +73,16 @@ h1 {
   text-decoration: none;
   padding: 10px 30px;
   border-radius: 10px;
-  transition-duration: 300ms;
+  transition-duration: 250ms;
   align-items: center;
+  border: 2px solid transparent;
 
 }
 
 #resetLeaderboard:hover {
-  background-color: rgb(99, 99, 99);
-  color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: 2px solid black;
 
 }
 
