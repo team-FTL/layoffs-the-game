@@ -2,7 +2,6 @@
   box-sizing: border-box;
 }
 
-
 nav {
   display: flex;
   font-family: 'DotGothic16', sans-serif;
@@ -26,8 +25,6 @@ nav a {
 
 nav a:hover {
   cursor: pointer;
-  /* color: rgb(246, 246, 149); */
-  /* text-shadow: 0 0 8px rgb(2, 40, 8), 0 0 8px rgb(2, 40, 8), 0 0 8px rgb(2, 40, 8), 0 0 8px rgb(2, 40, 8); */
   color: black;
 
 }

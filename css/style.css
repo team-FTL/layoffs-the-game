@@ -66,7 +66,6 @@ h1 {
   letter-spacing: 0.2em;
 }
 
-
 #profileRender {
   width: 90%;
 }
@@ -150,7 +149,6 @@ font-weight: 600;
   cursor: pointer;
 }
 
-
 #timer-box,
 #welcome-user {
   display: block;
@@ -190,7 +188,6 @@ font-weight: 600;
   border-radius: 10px;
   transition: 100ms;
 }
-
 
 #leaderboardBtn a:hover{
   background-color: rgb(108, 108, 108);
