@@ -4,8 +4,8 @@
 
 body {
   background-color: #b9e0b8;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
+  font-family: 'DotGothic16', sans-serif;
   /* width:80%;
   margin: auto; */
 }
@@ -14,20 +14,23 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  font-family: 'DotGothic16', sans-serif;
   background-color: darkolivegreen;
   padding: 20px 50px;
   margin-bottom: 20px;
   box-shadow: 2px 2px 4px #000000;
   width: 100%;
+  letter-spacing: 0.2em;
 }
 
 nav a {
   font-size: 30px;
   text-decoration: none;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'DotGothic16', sans-serif;
   font-weight: bold;
   color: white;
   transition-duration: 200ms;
+  letter-spacing: 0.2em;
 }
 
 nav a:hover {
@@ -39,12 +42,13 @@ nav a:hover {
 
 h1 {
   font-size: 50px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'DotGothic16', sans-serif;
   text-align: center;
   font-weight: bold;
   color: rgb(0, 0, 0);
   margin-top: 50px;
   margin-bottom: 50px;
+  letter-spacing: 0.2em;
 }
 
 #chart {
