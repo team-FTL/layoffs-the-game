@@ -162,7 +162,7 @@ function startTimer() {
   renderProfile();
 
   const timerHTML = document.getElementById('timer-box');
-  let countDownTimer = 2;
+  let countDownTimer = 20;
 
   //function to display number
   let countDown = function () {
@@ -248,7 +248,7 @@ function restart() {
 
 
 //Executables----------------------------------------------------------------
-setVolume(music, 0.2);
+setVolume(music, 0.05);
 setVolume(clickFX, 1);
 checkLocalStorage();
 formName.addEventListener('submit', getName);
