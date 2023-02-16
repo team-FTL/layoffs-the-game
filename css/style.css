@@ -40,7 +40,7 @@ nav a:hover {
 }
 
 #empty {
-  height: 240px;
+  height: 220px;
 }
 
 #mute {
@@ -68,7 +68,7 @@ h1 {
 
 
 #profileRender {
-  width: 80%;
+  width: 90%;
 }
 
 #intro {
@@ -98,7 +98,7 @@ font-weight: 600;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 600px;
+  width: 800px;
   height: 400px;
   margin: 0px auto;
 }
@@ -306,7 +306,8 @@ font-weight: bolder;
   display: flex;
   justify-content: center;
   align-items: center;;
-  width: 360px;
+  width: 500px;
   height: 200px;
   margin: 0px auto;
+  font-size: 25px;
 }
