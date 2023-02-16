@@ -54,6 +54,10 @@ nav a:hover {
   border: 2px solid black;
 }
 
+#mute:hover{
+  cursor: pointer;
+}
+
 h1 {
   font-size: 50px;
   font-family: 'DotGothic16', sans-serif;
@@ -227,7 +231,8 @@ font-weight: 600;
 }
 
 #empty2 {
-  height: 480px;
+  height: 470px;
+/* 480px before */
 }
 
 footer {
