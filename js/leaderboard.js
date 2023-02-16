@@ -9,6 +9,13 @@ let score = [];
 
 // Global functions 
 
+document.getElementById('resetLeaderboard').addEventListener('click', clearLeaderboard);
+function clearLeaderboard() {
+  localStorage.clear();
+} // empties local storage on clicking the reset button. localStorage is only used for the leaderboard in this application.
+
+
+
 let sortedHighScores = (array) => {
   return array.sort((a, b) => {
     return b.goodCall - a.goodCall;
@@ -40,6 +47,12 @@ new Chart(ctx, {
     }]
   },
   options: {
+    layout: {
+      padding: {
+        left: 10,
+        right: 10,
+      },
+    },
     backgroundColor: [
       'rgba(255, 99, 132, 0.2)',
       'rgba(255, 159, 64, 0.2)',

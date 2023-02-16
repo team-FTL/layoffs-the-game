@@ -4,10 +4,11 @@
 
 body {
   text-align: center;
-  background-image: url("../img/UI/mac.png");
+  background-image: url("../img/UI/mac2.png");
   background-repeat: no-repeat;
   background-size: 2200px;
-  background-position: center;
+  background-position: center 70px;
+  /* background-position: center; */
   background-color: white;
   font-family: 'DotGothic16', sans-serif;
   letter-spacing: 0.1em;
@@ -43,14 +44,27 @@ nav a:hover {
 
 }
 
+#empty{
+  height: 100px;
+}
+
 h1 {
   font-size: 50px;
   font-family: 'DotGothic16', sans-serif;
   text-align: center;
   font-weight: bold;
   color: rgb(0, 0, 0);
+
   margin-top: 100px;
   margin-bottom: 50px;
+
+ /*
+ height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  */
+
   letter-spacing: 0.2em;
 }
 
@@ -64,6 +78,12 @@ h1 {
   /* height: 300px; */
 }
 
+#intro {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+
 #outer-gameplay-area {
   display: flex;
   justify-content: space-around;
@@ -71,7 +91,7 @@ h1 {
   width: 80%;
   height: 500px;
   margin: auto;
-  margin-top: 250px;
+  /* margin-top: 250px; */
 
 }
 
@@ -202,25 +222,20 @@ align-items: center;
   cursor: pointer;
 }
 
-.instruction-area {
-  width: 1000px;
-  height: 500px;
-  margin: 50px auto;
-  border-width: 2px;
-  border-style: solid;
-  border-color: darkblue;
-}
+/* .instruction-area {
+width: 100%;
+} */
 
 #instruction-img {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 #instruction-title {
   font-size: 25px;
   font-weight: bold;
   margin-top: 30px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 #good-fire-example-div {
@@ -237,8 +252,12 @@ align-items: center;
   /* border-width: 2px;
   border-style: solid;
   border-color: darkblue; */
-  margin: 5px 10px;
-  width: 300px;
+  margin: 10px 10px;
+  width: 100px;
+}
+
+#empty2 {
+  height: 480px;
 }
 
 footer {

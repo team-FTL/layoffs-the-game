@@ -3,11 +3,15 @@
 }
 
 body {
-  background-color: #b9e0b8;
   text-align: center;
+  background-image: url("../img/UI/cubeWallBackground.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: white;
   font-family: 'DotGothic16', sans-serif;
-  /* width:80%;
-  margin: auto; */
+  letter-spacing: 0.1em;
+
 }
 
 nav {
@@ -65,7 +69,7 @@ h1 {
   align-items: center;
 }
 
-#reseLeaderboard {
+#resetLeaderboard {
   font-size: 25px;
   background-color: rgb(0, 0, 0);
   color: white;
