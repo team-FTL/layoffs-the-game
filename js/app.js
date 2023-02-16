@@ -109,7 +109,7 @@ function startTimer() {
   renderProfile();
 
   const timerHTML = document.getElementById('timer-box');
-  let countDownTimer = 5;
+  let countDownTimer = 20;
 
   //function to display number
   let countDown = function () {
