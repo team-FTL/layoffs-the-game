@@ -3,15 +3,24 @@
 }
 
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
+  background-image: url("../img/UI/mac.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: white;
+  font-family: 'DotGothic16', sans-serif;
+  letter-spacing: 0.1em;
+
 }
 
 nav {
   display: flex;
+  font-family: 'DotGothic16', sans-serif;
+  letter-spacing: 0.2em;
   justify-content: space-around;
   align-items: center;
-  background-color: darkolivegreen;
+  background-color: rgb(154, 154, 154);
   padding: 20px 50px;
   margin-bottom: 20px;
   box-shadow: 2px 2px 4px #000000;
@@ -21,7 +30,6 @@ nav {
 nav a {
   font-size: 30px;
   text-decoration: none;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bold;
   color: white;
   transition-duration: 200ms;
@@ -30,14 +38,26 @@ nav a {
 nav a:hover {
   cursor: pointer;
   /* color: rgb(246, 246, 149); */
-  text-shadow: 0 0 8px rgb(2, 40, 8), 0 0 8px rgb(2, 40, 8), 0 0 8px rgb(2, 40, 8), 0 0 8px rgb(2, 40, 8);
+  /* text-shadow: 0 0 8px rgb(2, 40, 8), 0 0 8px rgb(2, 40, 8), 0 0 8px rgb(2, 40, 8), 0 0 8px rgb(2, 40, 8); */
+  color: black;
 
 }
 
-#hero-image {
+h1 {
+  font-size: 50px;
+  font-family: 'DotGothic16', sans-serif;
+  text-align: center;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  margin-top: 50px;
+  margin-bottom: 50px;
+  letter-spacing: 0.2em;
+}
+
+/* #hero-image {
   margin-top: 20px;
   margin-bottom: 50px;
-}
+} */
 
 #profileRender {
   width: 1000px;
@@ -85,10 +105,10 @@ nav a:hover {
   width: 1000px;
   height: 700px;
   margin: auto;
-  border-width: 2px;
+  /* border-width: 2px;
   border-style: solid;
   border-color: darkblue;
-  background-color: rgb(219, 219, 219);
+  background-color: rgb(219, 219, 219); */
 }
 
 #form-name {
@@ -130,16 +150,7 @@ nav a:hover {
   cursor: pointer;
 }
 
-#gameplay-area {
-  display: block;
-  width: 1000px;
-  height: 700px;
-  margin: auto;
-  border-width: 2px;
-  border-style: solid;
-  border-color: darkblue;
-  background-color: rgb(219, 219, 219);
-}
+
 
 #timer-box,
 #welcome-user {

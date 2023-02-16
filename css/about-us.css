@@ -5,22 +5,25 @@
 
 nav {
   display: flex;
+  font-family: 'DotGothic16', sans-serif;
   justify-content: space-around;
   align-items: center;
-  background-color: darkolivegreen;
+  background-color: rgb(71, 71, 71);
   padding: 20px 50px;
   margin-bottom: 20px;
   box-shadow: 2px 2px 4px #000000;
   width: 100%;
+  letter-spacing: 0.2em;
 }
 
 nav a {
   font-size: 30px;
   text-decoration: none;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'DotGothic16', sans-serif;
   font-weight: bold;
   color: white;
   transition-duration: 200ms;
+  letter-spacing: 0.2em;
 }
 
 nav a:hover {
@@ -28,6 +31,10 @@ nav a:hover {
  /* color: rgb(246, 246, 149); */
  text-shadow: 0 0 8px rgb(2, 40, 8), 0 0 8px rgb(2, 40, 8), 0 0 8px rgb(2, 40, 8), 0 0 8px rgb(2, 40, 8);
 
+}
+
+body {
+  font-family: 'DotGothic16', sans-serif;
 }
 
 #members {
