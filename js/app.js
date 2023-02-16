@@ -16,14 +16,15 @@ let formName = document.getElementById('form-name');
 let retainButton = document.getElementById('retain');
 let fireButton = document.getElementById('fire');
 let music = document.querySelector('audio');
+let mute = document.getElementById('mute');
 
-// Objects --------------------------------------------------------------------
+//Objects --------------------------------------------------------------------
 function Session(name, goodCall) {
   this.name = name;
   this.goodCall = goodCall;
 }
 
-// Constructor function for session data
+//Constructor function for session data
 function Profile(name, fileName, fileExt = 'svg') {
   this.name = name;
   this.graph = `img/graphs/${fileName}.${fileExt}`;
@@ -49,13 +50,23 @@ function checkLocalStorage() {
   }
 }
 
-//Function to set default volume for BG
+//Sound Functions
 function setVolume(audio, num = 0.2) {
   audio.volume = num;
   console.log(audio);
 }
 
-// Generate Random Profiles -------------------------------------------------
+function toggleBG() {
+  if (!music.paused) {
+    music.pause();
+    mute.src = 'img/UI/soundoff.svg';
+  } else {
+    music.play();
+    mute.src = 'img/UI/soundon.svg';
+  }
+}
+
+//Generate Random Profiles -------------------------------------------------
 function generateListOfProfiles() {
   randomNames.forEach(name => {
     let randomGraph = pickRandomGraph();
@@ -71,7 +82,7 @@ function pickRandomGraph() {
   return `${randomType}_${randomNumber}`;
 }
 
-// Render Functions --------------------------------------------------------
+//Render Functions --------------------------------------------------------
 function renderProfile() {
   let employeeName = document.getElementById('employeeName');
   let profileImg = document.getElementById('profileRender');
@@ -101,7 +112,7 @@ function buildGamePlayArea() {
   // let innerPlayArea = document.getElementById('play-area');
 
   playArea.innerHTML = `
-    <div id="timer-box">Time</div>
+    <div id="timer-box">Loading...</div>
     <div id="employee-profile-container">
       <p id="employeeName"></p>
       <img
@@ -115,11 +126,20 @@ function buildGamePlayArea() {
 function renderEndScreen() {
   let playArea = document.getElementById('gameplay-area');
   let scoreCard = document.createElement('div');
+
+  scoreCard.setAttribute('id', 'scoreCard');
+
   let leaderboardBtn = document.createElement('div');
   let restartBtn = document.createElement('div');
+  
+  let currentPlayer = listOfSessions[listOfSessions.length - 1]
+  console.log(currentPlayer.goodCall);
 
-  scoreCard.innerText = `Employee ${listOfSessions[listOfSessions.length - 1].name} processed ${listOfSessions[listOfSessions.length - 1].goodCall} profiles. Quota has not been met. You've been arbitrarily laid off.`;
-  scoreCard.setAttribute('id', 'scoreCard');
+  if (currentPlayer.goodCall === 1) {
+    scoreCard.innerText = `Employee ${listOfSessions[listOfSessions.length - 1].name} processed ${listOfSessions[listOfSessions.length - 1].goodCall} profile. Quota has not been met. You've been arbitrarily laid off.`;
+  } else {
+    scoreCard.innerText = `Employee ${listOfSessions[listOfSessions.length - 1].name} processed ${listOfSessions[listOfSessions.length - 1].goodCall} profiles. Quota has not been met. You've been arbitrarily laid off.`;
+  }
 
   leaderboardBtn.innerHTML = '<a href="leaderboard.html"> Go to Leaderboard</a>';
   leaderboardBtn.setAttribute('id', 'leaderboardBtn');
@@ -134,7 +154,7 @@ function renderEndScreen() {
 
 }
 
-// Timer function ---------------------------------------------------------
+//Timer function ---------------------------------------------------------
 function startTimer() {
   //add eventHandler for game button
   retainButton.addEventListener('click', retain);
@@ -142,7 +162,7 @@ function startTimer() {
   renderProfile();
 
   const timerHTML = document.getElementById('timer-box');
-  let countDownTimer = 20;
+  let countDownTimer = 2;
 
   //function to display number
   let countDown = function () {
@@ -226,12 +246,12 @@ function restart() {
   location.reload();
 }
 
+
 //Executables----------------------------------------------------------------
-setVolume(music, 0.05);
+setVolume(music, 0.2);
 setVolume(clickFX, 1);
 checkLocalStorage();
 formName.addEventListener('submit', getName);
-
-
+mute.addEventListener('click', toggleBG);
 
 
