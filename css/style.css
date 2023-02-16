@@ -75,6 +75,9 @@ h1 {
   text-align: left;
 }
 
+#you {
+font-weight: 600;
+}
 
 #outer-gameplay-area {
   display: flex;
@@ -183,17 +186,21 @@ h1 {
   display: inline-block;
   text-align: center;
   font-size: 25px;
-  background-color: rgb(4, 119, 145);
+  background-color: rgb(154, 154, 154);
   text-decoration: none;
-  color: white;
-  border-radius: 10px;
+  color: rgb(255, 255, 255);
+  border-color: rgb(81, 81, 81);
   padding: 10px 30px;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
   transition: 100ms;
 
 }
 
-#leaderboardBtn a:hover {
-  background-color: rgb(0, 183, 224);
+
+#leaderboardBtn a:hover{
+  background-color: rgb(108, 108, 108);
   cursor: pointer;
 }
 
@@ -204,8 +211,12 @@ h1 {
   align-items: center;
   text-align: center;
   font-size: 25px;
-  background-color: rgb(83, 0, 134);
+  background-color: rgb(154, 154, 154);
   color: white;
+  border-color: rgb(81, 81, 81);
+  padding: 10px 30px;
+  border-style: solid;
+  border-width: 2px;
   border-radius: 10px;
   text-decoration: none;
   transition: 100ms;
@@ -215,7 +226,7 @@ h1 {
 }
 
 #restartBtn:hover {
-  background-color: rgb(131, 3, 211);
+  background-color: rgb(108, 108, 108);
   cursor: pointer;
 }
 
