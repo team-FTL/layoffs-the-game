@@ -77,7 +77,7 @@ function generateListOfProfiles() {
 
 function pickRandomGraph() {
   let randomType = graphs[Math.floor(Math.random() * graphs.length)];
-  let randomNumber = Math.floor(Math.random() * 10) + 1;
+  let randomNumber = Math.floor(Math.random() * 40) + 1;
 
   return `${randomType}_${randomNumber}`;
 }
