@@ -64,31 +64,6 @@ h1 {
   height: 500px;
 }
 
-/* .play-area-pane {
-  display: flex;
-  width: 1200px;
-  height: 700px;
-  margin: auto;
-  border-width: 2px;
-  z-index: 5;
-}
-
-.left-pane-fire {
-  width: 600px;
-  height: 700px;
-  margin: auto;
-  border-width: 2px;
-  background-color: rgb(212, 0, 0,0.1);
-}
-
-.right-pane-retain {
-  width: 600px;
-  height: 700px;
-  margin: auto;
-  border-width: 2px;
-  background-color: rgb(4, 255, 0,0.1);
-} */
-
 #outer-gameplay-area {
   display: flex;
   justify-content: space-between;
@@ -149,7 +124,6 @@ h1 {
   color: white;
   cursor: pointer;
 }
-
 
 
 #timer-box,
@@ -275,4 +249,20 @@ footer {
 .notify {
   animation: shake 0.3s;
   animation-iteration-count: 1;
+}
+
+#form-name {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hv {
+  color: green;
+}
+
+.le {
+  color: red;
 }

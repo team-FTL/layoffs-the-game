@@ -2,33 +2,32 @@
 
 const ctx = document.getElementById('myChart');
 
-// Global variables
-// session array initialized here
-
-// let session = [];
+// Global variables, empty arrays to hold our incoming gamerName and score.
 
 let gamerName = [];
 let score = [];
 
-if (localStorage.getItem('session') !== null) {
-  let loadScores = JSON.parse(localStorage.getItem('session'));
-  let sortedHighScores = (array) => {
-    return array.sort((a, b) => {
-      return b.goodCall - a.goodCall;
-    });
-    // return array;
-  };
-  let sortedArray = sortedHighScores(loadScores);
-  sortedArray.forEach(playerSession => {
+// Global functions 
+
+let sortedHighScores = (array) => {
+  return array.sort((a, b) => {
+    return b.goodCall - a.goodCall;
+  });
+};  // takes an array of objects and sorts them in descending numerical order by the goodCall property.
+
+function saveValuesToArray(anArray) {
+  anArray.forEach(playerSession => {
     gamerName.push(playerSession.name);
     score.push(playerSession.goodCall);
   });
-  console.log(sortedArray);
-};
+}  // takes an array of playerSession(s) and fills out the gamerName and score arrays with the playerSession's respective values.
 
-console.log(gamerName);
-console.log(score);
-
+if (localStorage.getItem('session') !== null) {
+  let loadScores = JSON.parse(localStorage.getItem('session'));
+  let sortedArray = sortedHighScores(loadScores);  // fetches the array of playerSession(s) from localStorage, sorts by score.
+  
+  saveValuesToArray(sortedArray);  // saves the sorted values to the leaderboard score arrays for chart.js to digest.
+}
 
 new Chart(ctx, {
   type: 'bar',
