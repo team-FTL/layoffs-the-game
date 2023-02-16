@@ -34,6 +34,7 @@ nav a:hover {
 
 body {
   font-family: 'DotGothic16', sans-serif;
+  background-color:#e5e5e3;
 }
 
 #members {
@@ -46,11 +47,12 @@ div {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 article {
   font-size: 25px;
+  color: #000000;
 }
 
 img {
@@ -60,7 +62,7 @@ img {
   margin-left: 20px;
   margin-right: 20px;
   border-width: 3px;
-  border-color: rgb(12, 92, 0);
+  border-color: rgb(54, 54, 54);
   border-style: solid;
 }
 
