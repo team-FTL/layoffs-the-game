@@ -38,8 +38,6 @@ nav a {
 
 nav a:hover {
   cursor: pointer;
-  /* color: rgb(246, 246, 149); */
-  /* text-shadow: 0 0 8px rgb(2, 40, 8), 0 0 8px rgb(2, 40, 8), 0 0 8px rgb(2, 40, 8), 0 0 8px rgb(2, 40, 8); */
   color: black;
 
 }
@@ -58,24 +56,13 @@ h1 {
   margin-top: 100px;
   margin-bottom: 50px;
 
- /*
- height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  */
 
   letter-spacing: 0.2em;
 }
 
-/* #hero-image {
-  margin-top: 20px;
-  margin-bottom: 50px;
-} */
 
 #profileRender {
   width: 80%;
-  /* height: 300px; */
 }
 
 #intro {
