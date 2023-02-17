@@ -247,7 +247,7 @@ function restart() {
 
 
 //Executables----------------------------------------------------------------
-setVolume(music, 0.05);
+setVolume(music, 0.1);
 setVolume(clickFX, 1);
 checkLocalStorage();
 formName.addEventListener('submit', getName);
