@@ -1,4 +1,4 @@
-# layoffs-the-game
+# Layoffs-the-game
 
 Team FTL: Kyle Freemantle, Jonathan Tsai, Thomas Lau
 
@@ -7,6 +7,9 @@ Team FTL: Kyle Freemantle, Jonathan Tsai, Thomas Lau
 It's 2023, and the layoffs are happening! Leadership has put everyone in Performance Improvement Plan for the past month and asked you to go through the current stack of employees and decide who gets to stay.
 
 This web game will utilize a left-right decision making mechanism simulating a overworked HR manager at a big tech company. The user will be presented with a simulated graph of an employee's progress in their Perfomance Improvement Plan (PIP) and will have to make a binary descision to retain or fire the worker. The employees are either in good standing (represented by green scorecard) or in bad standing (represented by red scorecard). On the scorecard, there is a progress graph indicated if they are improving or worsening in their standing. The user will have to click right to keep or click left to fire. When the time ends, the user will be presented with how many employees they've processed correctly. They will then be able to brag to their friends about their cutthroat business acumen!
+
+## Screenshot
+![Layoffs-The-Game (3)](https://github.com/team-FTL/layoffs-the-game/assets/120158188/a57fd7ce-2a74-444c-894a-e13838237b5e)
 
 ## User Story
 
